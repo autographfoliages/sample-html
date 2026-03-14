@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moose Made Media | Shopify, WooCommerce & BigCommerce Growth</title>
-  <meta name="description" content="Moose Made Media builds, refines, and grows serious ecommerce brands with Shopify, WooCommerce, and BigCommerce expertise." />
+  <title>Moose Made Media | Custom Ecommerce Development</title>
+  <meta name="description" content="Moose Made Media is a development-first team building custom ecommerce experiences, front ends, integrations, and growth systems for serious brands." />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
-      --surface: #fcfcfb;
-      --surface-2: #f4f4f2;
-      --ink: #0f0f10;
-      --muted: #5a5a5d;
-      --line: rgba(15, 15, 16, 0.11);
-      --line-strong: rgba(15, 15, 16, 0.2);
-      --accent: #8b8b8f;
-      --max: 1180px;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.06);
+      --bg: #fbfbf9;
+      --paper: #ffffff;
+      --ink: #0e0e0f;
+      --muted: #5b5b61;
+      --line: rgba(14,14,15,0.1);
+      --line-strong: rgba(14,14,15,0.18);
+      --max: 1220px;
+      --shadow: 0 20px 60px rgba(0,0,0,0.04);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       background: var(--bg);
@@ -44,48 +43,53 @@
     }
 
     .topbar {
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
       z-index: 20;
+      background: rgba(251,251,249,0.92);
       backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
 
     .topbar-inner {
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      min-height: 80px;
+      gap: 22px;
     }
 
-    .brand-lockup {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       min-width: 0;
     }
 
-    .brand-lockup img {
-      width: 52px;
-      height: 52px;
+    .brand img {
+      width: 50px;
+      height: 50px;
       object-fit: contain;
     }
 
+    .brand-mark {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
     .eyebrow {
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      font-size: 11px;
       color: var(--muted);
     }
 
     .brand-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(28px, 3vw, 42px);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(28px, 3vw, 40px);
       line-height: 0.95;
       font-weight: 700;
-      letter-spacing: 0.01em;
     }
 
     .nav {
@@ -101,91 +105,48 @@
     .nav a:hover { color: var(--ink); }
 
     .hero {
-      padding: 54px 0 34px;
-      background:
-        linear-gradient(180deg, #fff 0%, #fbfbfa 100%);
+      padding: 54px 0 30px;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .hero-copy,
-    .hero-panel,
-    .card,
-    .quote,
-    .cta-box,
-    .platform-item {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: start;
     }
 
     .hero-copy {
-      padding: 42px;
       position: relative;
-      overflow: hidden;
-    }
-
-    .hero-copy::after {
-      content: "M";
-      position: absolute;
-      right: 22px;
-      bottom: -26px;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 180px;
-      line-height: 1;
-      color: rgba(15,15,16,0.04);
-      pointer-events: none;
+      padding-top: 10px;
     }
 
     h1, h2, h3 {
       margin: 0;
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 700;
-      letter-spacing: 0.005em;
+      line-height: 0.95;
+      letter-spacing: 0.01em;
     }
 
     h1 {
-      font-size: clamp(58px, 8vw, 94px);
-      line-height: 0.92;
-      margin: 12px 0 18px;
-      max-width: 9ch;
+      font-size: clamp(60px, 9vw, 112px);
+      max-width: 8ch;
+      margin: 10px 0 18px;
     }
 
     .hero-sub {
+      max-width: 48ch;
       font-size: 18px;
       color: var(--muted);
-      max-width: 52ch;
-      margin-bottom: 26px;
-    }
-
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 24px 0 28px;
-    }
-
-    .pill {
-      border: 1px solid var(--line-strong);
-      background: #fff;
-      padding: 12px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      text-align: center;
-      letter-spacing: 0.01em;
+      margin: 0 0 26px;
     }
 
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      align-items: center;
+      margin-bottom: 28px;
     }
 
     .btn {
@@ -198,203 +159,207 @@
       border: 1px solid var(--ink);
       font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.03em;
       text-transform: uppercase;
-      transition: transform 0.16s ease, background 0.16s ease, color 0.16s ease;
+      letter-spacing: 0.04em;
+      transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
     }
 
     .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--ink); color: #fff; }
+    .btn-secondary { background: transparent; color: var(--ink); }
+    .btn-secondary:hover { background: var(--ink); color: #fff; }
 
-    .btn-primary {
-      background: var(--ink);
-      color: #fff;
+    .hero-word {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(96px, 18vw, 240px);
+      line-height: 0.82;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: rgba(14,14,15,0.08);
+      white-space: nowrap;
+      margin-left: -4px;
+      user-select: none;
+      pointer-events: none;
     }
 
-    .btn-secondary {
-      background: #fff;
-      color: var(--ink);
-    }
-
-    .btn-secondary:hover {
-      background: var(--ink);
-      color: #fff;
-    }
-
-    .hero-panel {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      justify-content: space-between;
-    }
-
-    .panel-top {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .metric {
-      padding: 18px;
+    .hero-side {
+      background: var(--paper);
       border: 1px solid var(--line);
-      background: #fff;
-      min-height: 136px;
+      box-shadow: var(--shadow);
+      padding: 28px;
     }
 
-    .metric-label {
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 11px;
+    .hero-side h3 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .hero-side p {
+      margin: 0 0 18px;
       color: var(--muted);
-      margin-bottom: 10px;
+      font-size: 15px;
     }
 
-    .metric-value {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 36px;
-      line-height: 0.95;
-      margin-bottom: 10px;
+    .hero-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
     }
 
-    .metric p {
-      margin: 0;
+    .hero-list div {
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
       font-size: 14px;
       color: var(--muted);
     }
 
-    .panel-note {
-      padding: 22px;
-      border-top: 1px solid var(--line);
-      background: var(--surface-2);
+    .hero-list strong {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 4px;
     }
 
-    .panel-note p {
+    .statement {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+      margin: 10px 0 22px;
+      background: linear-gradient(90deg, rgba(14,14,15,0.02), transparent 70%);
+    }
+
+    .statement p {
       margin: 0;
-      font-size: 17px;
-      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.02;
+      max-width: 18ch;
     }
 
     .section {
-      padding: 18px 0 20px;
+      padding: 18px 0 26px;
     }
 
-    .section-title {
+    .section-head {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1fr auto;
       gap: 18px;
       align-items: end;
-      margin-bottom: 18px;
       border-bottom: 1px solid var(--line);
       padding-bottom: 12px;
+      margin-bottom: 18px;
     }
 
-    .section-title h2 {
-      font-size: clamp(40px, 5vw, 58px);
-      line-height: 0.96;
+    .section-head h2 {
+      font-size: clamp(42px, 5vw, 60px);
     }
 
-    .section-title p {
+    .section-head p {
       margin: 0;
-      color: var(--muted);
-      font-size: 15px;
       max-width: 44ch;
-      justify-self: end;
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    .grid-3,
-    .grid-4 {
+    .capabilities {
       display: grid;
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-
-    .card {
-      padding: 24px;
-      min-height: 208px;
+    .capability {
+      padding: 6px 2px 0;
     }
 
-    .card-number {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 32px;
-      color: #7a7a7d;
+    .capability h3 {
+      font-size: 30px;
       margin-bottom: 10px;
     }
 
-    .card h3 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .card p {
+    .capability p {
       margin: 0;
       color: var(--muted);
       font-size: 15px;
+      max-width: 34ch;
     }
 
-    .platforms {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 16px;
-    }
-
-    .platform-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .platform-item {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 20px;
-      padding: 22px;
-      align-items: center;
-    }
-
-    .platform-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 34px;
-      line-height: 0.95;
-      white-space: nowrap;
-    }
-
-    .platform-copy {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .industry-wrap {
+    .platform-strip {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      align-content: start;
+      gap: 18px;
+      align-items: center;
+      font-size: clamp(20px, 3vw, 32px);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      line-height: 1.1;
     }
 
-    .industry-chip {
-      padding: 11px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      border: 1px solid var(--line-strong);
-      background: #fff;
-    }
+    .platform-strip span { white-space: nowrap; }
+    .dot { color: rgba(14,14,15,0.35); }
 
-    .quote {
+    .brands-box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
       padding: 28px;
-      margin-top: 18px;
+    }
+
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px 18px;
+      margin-top: 8px;
+    }
+
+    .brand-chip {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 10px;
+      border: 1px solid var(--line);
       background: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #242427;
+      text-transform: uppercase;
     }
 
-    .quote p {
+    .reviews {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .review-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 48ch;
+    }
+
+    .pull-quote {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .pull-quote p {
       margin: 0;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(32px, 3.2vw, 46px);
-      line-height: 1.02;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
     }
 
-    .quote small {
+    .pull-quote small {
       display: block;
       margin-top: 12px;
       color: var(--muted);
@@ -403,39 +368,41 @@
       font-size: 11px;
     }
 
-    .cta-box {
-      padding: 34px;
+    .cta {
+      margin: 18px 0 38px;
+      padding: 34px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .cta-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 28px;
-      align-items: center;
-      margin: 30px 0 40px;
-      background: linear-gradient(180deg, #ffffff 0%, #f6f6f5 100%);
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
     }
 
-    .cta-box h2 {
-      font-size: clamp(48px, 5vw, 68px);
-      line-height: 0.94;
-      margin-bottom: 12px;
+    .cta h2 {
+      font-size: clamp(54px, 6vw, 82px);
       max-width: 10ch;
+      margin-bottom: 12px;
     }
 
-    .cta-box p {
+    .cta p {
       margin: 0;
-      font-size: 16px;
       color: var(--muted);
-      max-width: 42ch;
+      font-size: 16px;
+      max-width: 44ch;
     }
 
     .cta-actions {
       display: flex;
-      flex-direction: column;
       gap: 12px;
-      align-items: stretch;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .footer {
-      padding: 20px 0 42px;
+    footer {
+      padding: 16px 0 40px;
       border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 13px;
@@ -445,26 +412,28 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 1040px) {
+    @media (max-width: 1020px) {
       .hero-grid,
-      .platforms,
-      .cta-box,
-      .section-title,
-      .grid-3,
-      .grid-4 {
+      .reviews,
+      .cta-grid,
+      .section-head,
+      .capabilities,
+      .brands-grid {
         grid-template-columns: 1fr;
       }
 
-      .section-title p { justify-self: start; }
-      .panel-top { grid-template-columns: 1fr 1fr; }
-      .platform-item { grid-template-columns: 1fr; gap: 10px; }
+      .section-head p,
+      .cta-actions { justify-self: start; }
+      .brands-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-word { white-space: normal; }
     }
 
     @media (max-width: 760px) {
       .topbar-inner {
+        min-height: auto;
+        padding: 14px 0;
         flex-direction: column;
         align-items: start;
-        padding: 14px 0;
       }
 
       .nav {
@@ -472,49 +441,31 @@
         gap: 14px;
       }
 
-      .hero-copy,
-      .hero-panel,
-      .card,
-      .quote,
-      .cta-box,
-      .platform-item {
-        padding: 22px;
-      }
-
-      .panel-top,
-      .grid-3,
-      .grid-4 {
-        grid-template-columns: 1fr;
-      }
-
-      h1 { max-width: none; font-size: 58px; }
-
+      h1 { font-size: 58px; max-width: none; }
+      .hero-word { font-size: 88px; }
       .hero-actions,
-      .cta-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
+      .cta-actions { flex-direction: column; align-items: stretch; }
       .btn { width: 100%; }
+      .brands-grid { grid-template-columns: 1fr; }
       .brand-name { font-size: 28px; }
-      .brand-lockup img { width: 46px; height: 46px; }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <div class="brand-lockup">
+      <div class="brand">
         <img src="logo.png" alt="Moose Made Media logo" />
-        <div>
-          <div class="eyebrow">Independent Ecommerce Consultancy</div>
+        <div class="brand-mark">
+          <div class="eyebrow">Development • Design • Growth</div>
           <div class="brand-name">Moose Made Media</div>
         </div>
       </div>
+
       <nav class="nav">
-        <a href="#services">Services</a>
-        <a href="#platforms">Platforms</a>
-        <a href="#industries">Industries</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#brands">Brands</a>
+        <a href="#proof">Proof</a>
         <a href="mailto:moose@moosemademedia.com">moose@moosemademedia.com</a>
         <a href="tel:5864054041">586-405-4041</a>
       </nav>
@@ -525,117 +476,65 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Shopify • WooCommerce • BigCommerce</div>
-          <h1>Classy ecommerce, built to sell.</h1>
-          <p class="hero-sub">
-            Moose Made Media helps serious brands refine their storefront, sharpen conversion, clean up operations, and create a more premium buying experience through a team of front-end developers, custom developers, marketers, and SEO/SEM specialists.
-          </p>
-          <div class="hero-points">
-            <div class="pill">Homepage Direction</div>
-            <div class="pill">Conversion Strategy</div>
-            <div class="pill">Platform Expertise</div>
-          </div>
+          <div class="eyebrow">Custom development for serious brands</div>
+          <h1>We build what others can’t.</h1>
+          <p class="hero-sub">Serious ecommerce for serious brands. Built to grow your company through custom development, sharp execution, and digital systems that actually move the business forward.</p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:moose@moosemademedia.com?subject=Moose%20Made%20Media%20Consult">Email Moose</a>
-            <a class="btn btn-secondary" href="tel:5864054041">Call 586-405-4041</a>
+            <a class="btn btn-primary" href="mailto:moose@moosemademedia.com?subject=Moose%20Made%20Media%20Project">Start a project</a>
+            <a class="btn btn-secondary" href="tel:5864054041">Call Moose 586-405-4041</a>
           </div>
+
+          <div class="hero-word">CUSTOM</div>
         </div>
 
-        <aside class="hero-panel">
-          <div class="panel-top">
-            <div class="metric">
-              <div class="metric-label">Focus</div>
-              <div class="metric-value">Ecommerce</div>
-              <p>Store design, structure, merchandising, CRO, and backend clarity.</p>
+        <aside class="hero-side">
+          <h3>If it needs to be built, we build it.</h3>
+          <p>Moose Made Media is a development-first team of front-end developers, custom developers, marketers, and SEO/SEM specialists. We build custom ecommerce experiences, functionality, integrations, and growth systems for brands that need more than a template.</p>
+
+          <div class="hero-list">
+            <div>
+              <strong>Custom Development</strong>
+              Front ends, custom features, unique functionality, and ecommerce systems shaped around the way your business actually works.
             </div>
-            <div class="metric">
-              <div class="metric-label">Platforms</div>
-              <div class="metric-value">3 Core</div>
-              <p>Shopify, WooCommerce, and BigCommerce with practical execution.</p>
+            <div>
+              <strong>Growth Execution</strong>
+              SEO, SEM, structure, UX, merchandising, and conversion-minded decisions built to help your company grow.
             </div>
-            <div class="metric">
-              <div class="metric-label">Tone</div>
-              <div class="metric-value">Premium</div>
-              <p>Editorial presentation with restrained, timeless visual direction.</p>
+            <div>
+              <strong>Serious Presentation</strong>
+              Clean, modern, premium interfaces that feel sharp without becoming noisy or overdesigned.
             </div>
-            <div class="metric">
-              <div class="metric-label">CTA</div>
-              <div class="metric-value">Direct</div>
-              <p>No fluff. Reach out by email or call for a consult.</p>
-            </div>
-          </div>
-          <div class="panel-note">
-            <p>Built for brands that want a cleaner storefront, stronger conversion flow, and a more elevated digital presence.</p>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="statement">
       <div class="wrap">
-        <div class="section-title">
-          <h2>What Moose Made Media does.</h2>
-          <p>Strategy and execution for ecommerce brands that need more than generic web design. The emphasis is always on real commercial outcomes.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-number">01</div>
-            <h3>Storefront Direction</h3>
-            <p>Homepage structure, collection experience, product page hierarchy, navigation, and a clearer premium brand story.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">02</div>
-            <h3>Conversion Refinement</h3>
-            <p>CTA placement, trust cues, merchandising logic, mobile friction reduction, and cleaner purchase flow.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">03</div>
-            <h3>Operational Clarity</h3>
-            <p>Platform setup, backend cleanup, merchandising rules, content organization, and practical ecommerce systems.</p>
-          </article>
-        </div>
+        <p>Custom development is our bloodline. Growth is the point. Taste is the difference.</p>
       </div>
     </section>
 
-    <section class="section" id="platforms">
+    <section class="section" id="capabilities">
       <div class="wrap">
-        <div class="section-title">
-          <h2>Platform-led, not platform-limited.</h2>
-          <p>The work adapts to the stack, but the goal stays the same: a sharper customer experience and a store built to convert.</p>
+        <div class="section-head">
+          <h2>Built around capability.</h2>
+          <p>Less template thinking. More tailored execution. Moose Made Media works at the point where design, development, and commercial performance meet.</p>
         </div>
 
-        <div class="platforms">
-          <div class="platform-list">
-            <div class="platform-item">
-              <div class="platform-name">Shopify</div>
-              <div class="platform-copy">Theme direction, collection structure, product merchandising, conversion improvements, and scalable frontend refinement.</div>
-            </div>
-            <div class="platform-item">
-              <div class="platform-name">WooCommerce</div>
-              <div class="platform-copy">Custom homepage direction, content strategy, plugin practicality, and a more polished editorial storefront feel.</div>
-            </div>
-            <div class="platform-item">
-              <div class="platform-name">BigCommerce</div>
-              <div class="platform-copy">Navigation cleanup, product discovery, content alignment, and premium presentation without overcomplication.</div>
-            </div>
+        <div class="capabilities">
+          <div class="capability">
+            <h3>Custom development</h3>
+            <p>Frontend builds, advanced functionality, integrations, custom sections, tailored flows, and ecommerce experiences built around the business instead of forcing the business into a template.</p>
           </div>
-
-          <div>
-            <div class="industry-wrap" id="industries">
-              <div class="industry-chip">Luxury-adjacent retail</div>
-              <div class="industry-chip">Packaging & supply</div>
-              <div class="industry-chip">B2B wholesale</div>
-              <div class="industry-chip">Specialty products</div>
-              <div class="industry-chip">Lifestyle brands</div>
-              <div class="industry-chip">Cigar & premium goods aesthetic</div>
-              <div class="industry-chip">Editorial-style commerce</div>
-              <div class="industry-chip">Conversion-minded redesign</div>
-            </div>
-
-            <div class="quote">
-              <p>Retro in restraint. Modern in execution. Built for commerce, not decoration.</p>
-              <small>Moose Made Media</small>
-            </div>
+          <div class="capability">
+            <h3>Ecommerce growth</h3>
+            <p>Conversion strategy, structure, content hierarchy, SEO/SEM support, merchandising direction, and meaningful improvements that support revenue and scale.</p>
+          </div>
+          <div class="capability">
+            <h3>Design with purpose</h3>
+            <p>Premium visual direction, cleaner hierarchy, stronger trust, sharper presentation, and interfaces that feel confident, editorial, and commercially effective.</p>
           </div>
         </div>
       </div>
@@ -643,122 +542,87 @@
 
     <section class="section">
       <div class="wrap">
-        <div class="section-title">
-          <h2>How the work feels.</h2>
-          <p>Clean hierarchy, confident typography, restrained color, premium spacing, and messaging that respects the reader.</p>
-        </div>
-
-        <div class="grid-4">
-          <article class="card">
-            <div class="card-number">A</div>
-            <h3>Editorial</h3>
-            <p>Inspired by publication-grade layouts instead of trend-heavy templates.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">B</div>
-            <h3>Commercial</h3>
-            <p>Every visual decision supports trust, navigation, conversion, or brand positioning.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">C</div>
-            <h3>Restrained</h3>
-            <p>Less clutter, fewer gimmicks, stronger presentation.</p>
-          </article>
-          <article class="card">
-            <div class="card-number">D</div>
-            <h3>Practical</h3>
-            <p>Built for owners who actually run stores, not just admire mockups.</p>
-          </article>
+        <div class="platform-strip">
+          <span>Shopify</span>
+          <span class="dot">•</span>
+          <span>WooCommerce</span>
+          <span class="dot">•</span>
+          <span>BigCommerce</span>
+          <span class="dot">•</span>
+          <span>Custom builds where needed</span>
         </div>
       </div>
     </section>
 
-    <section class="section" id="domains">
+    <section class="section" id="brands">
       <div class="wrap">
-        <div class="section-title">
+        <div class="section-head">
           <h2>Selected brands and domains.</h2>
-          <p>A working list of storefronts, brands, and digital properties Moose has helped guide across ecommerce, wholesale, product, and growth.</p>
+          <p>Storefronts, brands, and digital properties Moose Made Media has helped build, guide, support, or grow.</p>
         </div>
 
-        <div class="card" style="min-height:auto; padding:34px; background:#fff;">
-          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px 18px;">
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">AutographFoliages.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">BeastBranding.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">BikeBling.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">Cannatron.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">CardboardCore.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">Chocolata.la</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">DazedWholesale.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">DesignInTools.Intel.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">HarmanCorp.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">Hello-Vero.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">LoudLock.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">MacMeanOffer.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">MacOfAllTrades.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">MJWholesale.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">MooseMadeMedia.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">OozeLife.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">PilotCareerHub.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">PopTopz.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">SolidSignal.com</div>
-            <div class="industry-chip" style="border-radius:10px; padding:12px 14px; justify-self:start;">TheCloudSupply.com</div>
+        <div class="brands-box">
+          <div class="brands-grid">
+            <div class="brand-chip">AutographFoliages.com</div>
+            <div class="brand-chip">BeastBranding.com</div>
+            <div class="brand-chip">BikeBling.com</div>
+            <div class="brand-chip">Cannatron.com</div>
+            <div class="brand-chip">CardboardCore.com</div>
+            <div class="brand-chip">Chocolata.la</div>
+            <div class="brand-chip">DazedWholesale.com</div>
+            <div class="brand-chip">DesignInTools.Intel.com</div>
+            <div class="brand-chip">HarmanCorp.com</div>
+            <div class="brand-chip">Hello-Vero.com</div>
+            <div class="brand-chip">LoudLock.com</div>
+            <div class="brand-chip">MacMeanOffer.com</div>
+            <div class="brand-chip">MacOfAllTrades.com</div>
+            <div class="brand-chip">MJWholesale.com</div>
+            <div class="brand-chip">MooseMadeMedia.com</div>
+            <div class="brand-chip">OozeLife.com</div>
+            <div class="brand-chip">PilotCareerHub.com</div>
+            <div class="brand-chip">PopTopz.com</div>
+            <div class="brand-chip">SolidSignal.com</div>
+            <div class="brand-chip">TheCloudSupply.com</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="testimonials">
-      <div class="wrap">
-        <div class="section-title">
-          <h2>What people say about Moose.</h2>
-          <p>Drawn from professional recommendations and rewritten for clarity, while keeping the substance honest.</p>
+    <section class="section" id="proof">
+      <div class="wrap reviews">
+        <div class="review-copy">
+          <div class="section-head" style="grid-template-columns:1fr; margin-bottom:12px;">
+            <h2>What people say about Moose Made Media.</h2>
+          </div>
+          <p>Professional recommendations consistently point to Moose and his team as strategically sharp, commercially minded, and able to turn complex digital challenges into clear direction clients can actually use.</p>
+          <p>Recommendations repeatedly reflect strong leadership, steady communication, and the ability of Moose and his team to guide brands with practical judgment and real-world execution.</p>
+          <p>The common thread is commercial impact: stronger outcomes, sharper strategy, and meaningful growth across ecommerce, branding, search, and digital marketing.</p>
         </div>
 
-        <div class="grid-3">
-          <article class="card" style="background:#fff; min-height:260px;">
-            <div class="card-number">I</div>
-            <h3>Strategic depth</h3>
-            <p>Professional recommendations consistently point to Moose and his team as strategically sharp, commercially minded, and able to turn complex digital challenges into clear direction clients can actually use.</p>
-          </article>
-          <article class="card" style="background:#fff; min-height:260px;">
-            <div class="card-number">II</div>
-            <h3>Leadership presence</h3>
-            <p>Recommendations repeatedly reflect strong leadership, steady communication, and the ability of Moose and his team to guide brands with practical judgment and real-world execution.</p>
-          </article>
-          <article class="card" style="background:#fff; min-height:260px;">
-            <div class="card-number">III</div>
-            <h3>Commercial impact</h3>
-            <p>The overall theme is commercial impact: stronger client outcomes, sharper strategy, and meaningful growth across ecommerce, branding, search, and digital marketing.</p>
-          </article>
-        </div>
-
-        <div class="quote" style="margin-top:18px;">
+        <aside class="pull-quote">
           <p>“If you’re looking for a team that can execute across a variety of ecommerce challenges, Moose and his team are the right people to call.”</p>
           <small>Adapted from professional recommendations</small>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="cta-box">
-          <div>
-            <div class="eyebrow">Ready to talk?</div>
-            <h2>Let’s make the store feel worth buying from.</h2>
-            <p>If you need a homepage direction, platform cleanup, merchandising help, or a sharper ecommerce presentation, reach out directly.</p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="mailto:moose@moosemademedia.com?subject=Moose%20Made%20Media%20Consult">moose@moosemademedia.com</a>
-            <a class="btn btn-secondary" href="tel:5864054041">Call Moose at 586-405-4041</a>
-          </div>
+    <section class="cta">
+      <div class="wrap cta-grid">
+        <div>
+          <h2>Growing your company starts with building it right.</h2>
+          <p>From custom ecommerce development to sharper growth systems, Moose Made Media helps brands build what generic shops can’t.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="mailto:moose@moosemademedia.com?subject=Moose%20Made%20Media%20Consult">Email Moose</a>
+          <a class="btn btn-secondary" href="tel:5864054041">Call 586-405-4041</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="wrap footer">
+  <footer class="wrap">
     <div>© 2026 Moose Made Media</div>
-    <div>Shopify • WooCommerce • BigCommerce</div>
+    <div>Custom Development • Ecommerce • Growth</div>
   </footer>
 </body>
 </html>
