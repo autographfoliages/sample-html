@@ -9,17 +9,16 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbfbf9;
+      --bg: #f7f7f4;
       --paper: #ffffff;
-      --ink: #0e0e0f;
-      --muted: #5b5b61;
-      --line: rgba(14,14,15,0.1);
-      --line-strong: rgba(14,14,15,0.18);
-      --max: 1220px;
-      --shadow: 0 20px 60px rgba(0,0,0,0.04);
+      --ink: #0b0b0c;
+      --muted: #5a5a60;
+      --line: rgba(11,11,12,0.12);
+      --line-strong: rgba(11,11,12,0.22);
+      --max: 1340px;
     }
 
     * { box-sizing: border-box; }
@@ -29,7 +28,7 @@
       background: var(--bg);
       color: var(--ink);
       font-family: 'Inter', Arial, sans-serif;
-      line-height: 1.55;
+      line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -38,25 +37,25 @@
     img { max-width: 100%; display: block; }
 
     .wrap {
-      width: min(calc(100% - 36px), var(--max));
+      width: min(calc(100% - 40px), var(--max));
       margin: 0 auto;
     }
 
     .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(247,247,244,0.92);
+      backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(251,251,249,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
     }
 
     .topbar-inner {
-      min-height: 80px;
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 22px;
+      gap: 20px;
     }
 
     .brand {
@@ -70,12 +69,6 @@
       width: 50px;
       height: 50px;
       object-fit: contain;
-    }
-
-    .brand-mark {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
     }
 
     .eyebrow {
@@ -105,48 +98,52 @@
     .nav a:hover { color: var(--ink); }
 
     .hero {
-      padding: 54px 0 30px;
-      overflow: hidden;
+      padding: 42px 0 20px;
     }
 
-    .hero-grid {
+    .hero-top {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 28px;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
       align-items: start;
+      margin-bottom: 22px;
     }
 
-    .hero-copy {
-      position: relative;
-      padding-top: 10px;
-    }
-
-    h1, h2, h3 {
-      margin: 0;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 700;
-      line-height: 0.95;
-      letter-spacing: 0.01em;
-    }
-
-    h1 {
-      font-size: clamp(60px, 9vw, 112px);
-      max-width: 8ch;
-      margin: 10px 0 18px;
-    }
-
-    .hero-sub {
-      max-width: 48ch;
-      font-size: 18px;
+    .hero-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
       color: var(--muted);
-      margin: 0 0 26px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: clamp(54px, 8.4vw, 116px);
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      text-transform: uppercase;
+      max-width: 11ch;
+    }
+
+    .hero-side {
+      max-width: 320px;
+      padding-top: 8px;
+    }
+
+    .hero-side p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
     }
 
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin: 22px 0 26px;
     }
 
     .btn {
@@ -158,7 +155,7 @@
       border-radius: 999px;
       border: 1px solid var(--ink);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
@@ -170,76 +167,38 @@
     .btn-secondary:hover { background: var(--ink); color: #fff; }
 
     .hero-word {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(96px, 18vw, 240px);
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: clamp(76px, 18vw, 250px);
       line-height: 0.82;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      color: rgba(14,14,15,0.08);
+      font-weight: 900;
+      letter-spacing: -0.07em;
+      text-transform: uppercase;
+      color: rgba(11,11,12,0.08);
       white-space: nowrap;
-      margin-left: -4px;
+      width: 100%;
+      overflow: hidden;
       user-select: none;
       pointer-events: none;
+      margin-left: -10px;
     }
 
-    .hero-side {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .hero-side h3 {
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .hero-side p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .hero-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .hero-list div {
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .hero-list strong {
-      display: block;
-      color: var(--ink);
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 4px;
-    }
-
-    .statement {
+    .intro-band {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       padding: 22px 0;
-      margin: 10px 0 22px;
-      background: linear-gradient(90deg, rgba(14,14,15,0.02), transparent 70%);
+      margin-bottom: 12px;
     }
 
-    .statement p {
+    .intro-band p {
       margin: 0;
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(28px, 4vw, 46px);
+      font-size: clamp(30px, 3.5vw, 50px);
       line-height: 1.02;
       max-width: 18ch;
     }
 
     .section {
-      padding: 18px 0 26px;
+      padding: 22px 0 28px;
     }
 
     .section-head {
@@ -247,13 +206,16 @@
       grid-template-columns: 1fr auto;
       gap: 18px;
       align-items: end;
-      border-bottom: 1px solid var(--line);
       padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
       margin-bottom: 18px;
     }
 
     .section-head h2 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: clamp(42px, 5vw, 60px);
+      line-height: 0.95;
     }
 
     .section-head p {
@@ -266,16 +228,14 @@
     .capabilities {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .capability {
-      padding: 6px 2px 0;
+      gap: 28px;
     }
 
     .capability h3 {
+      margin: 0 0 10px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 30px;
-      margin-bottom: 10px;
+      line-height: 1;
     }
 
     .capability p {
@@ -285,344 +245,15 @@
       max-width: 34ch;
     }
 
-    .platform-strip {
-      padding: 22px 0;
+    .platform-line {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+      padding: 18px 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 16px;
       align-items: center;
-      font-size: clamp(20px, 3vw, 32px);
       font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(24px, 3vw, 34px);
       line-height: 1.1;
     }
-
-    .platform-strip span { white-space: nowrap; }
-    .dot { color: rgba(14,14,15,0.35); }
-
-    .brands-box {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .brands-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px 18px;
-      margin-top: 8px;
-    }
-
-    .brand-chip {
-      min-height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 12px 10px;
-      border: 1px solid var(--line);
-      background: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: #242427;
-      text-transform: uppercase;
-    }
-
-    .reviews {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .review-copy p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 48ch;
-    }
-
-    .pull-quote {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .pull-quote p {
-      margin: 0;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1;
-    }
-
-    .pull-quote small {
-      display: block;
-      margin-top: 12px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 11px;
-    }
-
-    .cta {
-      margin: 18px 0 38px;
-      padding: 34px 0 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: end;
-    }
-
-    .cta h2 {
-      font-size: clamp(54px, 6vw, 82px);
-      max-width: 10ch;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 44ch;
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    footer {
-      padding: 16px 0 40px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 1020px) {
-      .hero-grid,
-      .reviews,
-      .cta-grid,
-      .section-head,
-      .capabilities,
-      .brands-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head p,
-      .cta-actions { justify-self: start; }
-      .brands-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-word { white-space: normal; }
-    }
-
-    @media (max-width: 760px) {
-      .topbar-inner {
-        min-height: auto;
-        padding: 14px 0;
-        flex-direction: column;
-        align-items: start;
-      }
-
-      .nav {
-        justify-content: start;
-        gap: 14px;
-      }
-
-      h1 { font-size: 58px; max-width: none; }
-      .hero-word { font-size: 88px; }
-      .hero-actions,
-      .cta-actions { flex-direction: column; align-items: stretch; }
-      .btn { width: 100%; }
-      .brands-grid { grid-template-columns: 1fr; }
-      .brand-name { font-size: 28px; }
-    }
-  </style>
-</head>
-<body>
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <div class="brand">
-        <img src="logo.png" alt="Moose Made Media logo" />
-        <div class="brand-mark">
-          <div class="eyebrow">Development • Design • Growth</div>
-          <div class="brand-name">Moose Made Media</div>
-        </div>
-      </div>
-
-      <nav class="nav">
-        <a href="#capabilities">Capabilities</a>
-        <a href="#brands">Brands</a>
-        <a href="#proof">Proof</a>
-        <a href="mailto:moose@moosemademedia.com">moose@moosemademedia.com</a>
-        <a href="tel:5864054041">586-405-4041</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Custom development for serious brands</div>
-          <h1>We build what others can’t.</h1>
-          <p class="hero-sub">Serious ecommerce for serious brands. Built to grow your company through custom development, sharp execution, and digital systems that actually move the business forward.</p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:moose@moosemademedia.com?subject=Moose%20Made%20Media%20Project">Start a project</a>
-            <a class="btn btn-secondary" href="tel:5864054041">Call Moose 586-405-4041</a>
-          </div>
-
-          <div class="hero-word">CUSTOM</div>
-        </div>
-
-        <aside class="hero-side">
-          <h3>If it needs to be built, we build it.</h3>
-          <p>Moose Made Media is a development-first team of front-end developers, custom developers, marketers, and SEO/SEM specialists. We build custom ecommerce experiences, functionality, integrations, and growth systems for brands that need more than a template.</p>
-
-          <div class="hero-list">
-            <div>
-              <strong>Custom Development</strong>
-              Front ends, custom features, unique functionality, and ecommerce systems shaped around the way your business actually works.
-            </div>
-            <div>
-              <strong>Growth Execution</strong>
-              SEO, SEM, structure, UX, merchandising, and conversion-minded decisions built to help your company grow.
-            </div>
-            <div>
-              <strong>Serious Presentation</strong>
-              Clean, modern, premium interfaces that feel sharp without becoming noisy or overdesigned.
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="statement">
-      <div class="wrap">
-        <p>Custom development is our bloodline. Growth is the point. Taste is the difference.</p>
-      </div>
-    </section>
-
-    <section class="section" id="capabilities">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Built around capability.</h2>
-          <p>Less template thinking. More tailored execution. Moose Made Media works at the point where design, development, and commercial performance meet.</p>
-        </div>
-
-        <div class="capabilities">
-          <div class="capability">
-            <h3>Custom development</h3>
-            <p>Frontend builds, advanced functionality, integrations, custom sections, tailored flows, and ecommerce experiences built around the business instead of forcing the business into a template.</p>
-          </div>
-          <div class="capability">
-            <h3>Ecommerce growth</h3>
-            <p>Conversion strategy, structure, content hierarchy, SEO/SEM support, merchandising direction, and meaningful improvements that support revenue and scale.</p>
-          </div>
-          <div class="capability">
-            <h3>Design with purpose</h3>
-            <p>Premium visual direction, cleaner hierarchy, stronger trust, sharper presentation, and interfaces that feel confident, editorial, and commercially effective.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="platform-strip">
-          <span>Shopify</span>
-          <span class="dot">•</span>
-          <span>WooCommerce</span>
-          <span class="dot">•</span>
-          <span>BigCommerce</span>
-          <span class="dot">•</span>
-          <span>Custom builds where needed</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="brands">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Selected brands and domains.</h2>
-          <p>Storefronts, brands, and digital properties Moose Made Media has helped build, guide, support, or grow.</p>
-        </div>
-
-        <div class="brands-box">
-          <div class="brands-grid">
-            <div class="brand-chip">AutographFoliages.com</div>
-            <div class="brand-chip">BeastBranding.com</div>
-            <div class="brand-chip">BikeBling.com</div>
-            <div class="brand-chip">Cannatron.com</div>
-            <div class="brand-chip">CardboardCore.com</div>
-            <div class="brand-chip">Chocolata.la</div>
-            <div class="brand-chip">DazedWholesale.com</div>
-            <div class="brand-chip">DesignInTools.Intel.com</div>
-            <div class="brand-chip">HarmanCorp.com</div>
-            <div class="brand-chip">Hello-Vero.com</div>
-            <div class="brand-chip">LoudLock.com</div>
-            <div class="brand-chip">MacMeanOffer.com</div>
-            <div class="brand-chip">MacOfAllTrades.com</div>
-            <div class="brand-chip">MJWholesale.com</div>
-            <div class="brand-chip">MooseMadeMedia.com</div>
-            <div class="brand-chip">OozeLife.com</div>
-            <div class="brand-chip">PilotCareerHub.com</div>
-            <div class="brand-chip">PopTopz.com</div>
-            <div class="brand-chip">SolidSignal.com</div>
-            <div class="brand-chip">TheCloudSupply.com</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="proof">
-      <div class="wrap reviews">
-        <div class="review-copy">
-          <div class="section-head" style="grid-template-columns:1fr; margin-bottom:12px;">
-            <h2>What people say about Moose Made Media.</h2>
-          </div>
-          <p>Professional recommendations consistently point to Moose and his team as strategically sharp, commercially minded, and able to turn complex digital challenges into clear direction clients can actually use.</p>
-          <p>Recommendations repeatedly reflect strong leadership, steady communication, and the ability of Moose and his team to guide brands with practical judgment and real-world execution.</p>
-          <p>The common thread is commercial impact: stronger outcomes, sharper strategy, and meaningful growth across ecommerce, branding, search, and digital marketing.</p>
-        </div>
-
-        <aside class="pull-quote">
-          <p>“If you’re looking for a team that can execute across a variety of ecommerce challenges, Moose and his team are the right people to call.”</p>
-          <small>Adapted from professional recommendations</small>
-        </aside>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="wrap cta-grid">
-        <div>
-          <h2>Growing your company starts with building it right.</h2>
-          <p>From custom ecommerce development to sharper growth systems, Moose Made Media helps brands build what generic shops can’t.</p>
-        </div>
-        <div class="cta-actions">
-          <a class="btn btn-primary" href="mailto:moose@moosemademedia.com?subject=Moose%20Made%20Media%20Consult">Email Moose</a>
-          <a class="btn btn-secondary" href="tel:5864054041">Call 586-405-4041</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="wrap">
-    <div>© 2026 Moose Made Media</div>
-    <div>Custom Development • Ecommerce • Growth</div>
-  </footer>
-</body>
-</html>
