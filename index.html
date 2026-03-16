@@ -160,6 +160,8 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
       transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+      max-width: 100%;
+      text-align: center;
     }
 
     .btn:hover { transform: translateY(-1px); }
@@ -184,270 +186,20 @@
     }
 
     .years-word {
-      font-family: "Inter", Arial, sans-serif;
-      font-size: clamp(58px, 11vw, 150px);
-      line-height: 0.84;
-      font-weight: 900;
-      letter-spacing: -0.06em;
-      text-transform: uppercase;
-      color: rgba(11, 11, 12, 0.08);
-      white-space: nowrap;
-      width: 100%;
-      overflow: visible;
-      user-select: none;
-      pointer-events: none;
-      text-align: right;
-      margin-top: 8px;
-    }
-
-    .intro-band {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 18px 0;
-      margin-bottom: 8px;
-    }
-
-    .intro-band p {
-      margin: 0;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(30px, 3.5vw, 50px);
-      line-height: 1.02;
-      max-width: 18ch;
-    }
-
-    .section {
-      padding: 18px 0 22px;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      align-items: end;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 18px;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(42px, 5vw, 60px);
-      line-height: 0.95;
-    }
-
-    .section-head p {
-      margin: 0;
-      max-width: 44ch;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .capabilities {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .capability h3 {
-      margin: 0 0 10px;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 30px;
-      line-height: 1;
-    }
-
-    .capability p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 34ch;
-    }
-
-    .platform-line {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 18px 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(24px, 3vw, 34px);
-      line-height: 1.1;
-    }
-
-    .dot { color: rgba(11,11,12,0.3); }
-
-    .brands-box {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 20px;
-    }
-
-    .brands-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .brand-chip {
-      min-height: 54px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 12px 10px;
-      border: 1px solid var(--line);
-      background: #fff;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .proof {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .proof-copy p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 50ch;
-    }
-
-    .quote {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      padding: 26px;
-    }
-
-    .quote p {
-      margin: 0;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.02;
-    }
-
-    .quote small {
-      display: block;
-      margin-top: 12px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 11px;
-    }
-
-    .cta {
-      padding: 14px 0 28px;
-      border-top: 1px solid var(--line);
-      margin-top: 4px;
-    }
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: end;
-    }
-
-    .cta h2 {
-      margin: 0 0 12px;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(48px, 5.2vw, 76px);
-      line-height: 0.92;
-      max-width: 8ch;
-    }
-
-    .cta p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 44ch;
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    footer {
-      padding: 16px 0 40px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 1080px) {
-      .hero-top,
-      .section-head,
-      .proof,
-      .cta-grid,
-      .capabilities,
-      .brands-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        max-width: none;
-      }
-
-      .hero-side {
-        max-width: 60ch;
-      }
-
-      .hero-word {
-        white-space: normal;
-        word-break: break-word;
-        font-size: clamp(72px, 14vw, 160px);
-        line-height: 0.88;
-      }
-
-      .brands-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .topbar-inner {
-        min-height: auto;
-        padding: 14px 0;
-        flex-direction: column;
-        align-items: start;
-      }
-
-      .nav {
-        justify-content: start;
-        gap: 14px;
-      }
-
-      .hero {
-        padding-top: 26px;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero-word {
-        font-size: 72px;
-        margin-left: -2px;
+        font-size: 54px;
+        text-align: left;
         white-space: nowrap;
-        word-break: normal;
-        line-height: 0.9;
       }
 
-      .hero-word::before {
-        content: "DEV";
+      .years-word::before {
+        content: "25+ Yrs";
+      }
+
+      .years-word {
+        color: transparent;
+        position: relative;
+        margin: 0 0 6px;
+      }        content: "DEV";
       }
 
       .hero-word {
@@ -491,8 +243,15 @@
         align-items: stretch;
       }
 
+      .cta-grid {
+        gap: 14px;
+      }
+
       .btn {
         width: 100%;
+        white-space: normal;
+        padding: 12px 18px;
+        min-height: 52px;
       }
 
       .brands-grid {
@@ -604,26 +363,26 @@
 
         <div class="brands-box">
           <div class="brands-grid">
-            <div class="brand-chip">AutographFoliages.com</div>
-            <div class="brand-chip">BeastBranding.com</div>
-            <div class="brand-chip">BikeBling.com</div>
-            <div class="brand-chip">Cannatron.com</div>
-            <div class="brand-chip">CardboardCore.com</div>
-            <div class="brand-chip">Chocolata.la</div>
-            <div class="brand-chip">DazedWholesale.com</div>
-            <div class="brand-chip">DesignInTools.Intel.com</div>
-            <div class="brand-chip">HarmanCorp.com</div>
-            <div class="brand-chip">Hello-Vero.com</div>
-            <div class="brand-chip">LoudLock.com</div>
-            <div class="brand-chip">MacMeanOffer.com</div>
-            <div class="brand-chip">MacOfAllTrades.com</div>
-            <div class="brand-chip">MJWholesale.com</div>
-            <div class="brand-chip">MooseMadeMedia.com</div>
-            <div class="brand-chip">OozeLife.com</div>
-            <div class="brand-chip">PilotCareerHub.com</div>
-            <div class="brand-chip">PopTopz.com</div>
-            <div class="brand-chip">SolidSignal.com</div>
-            <div class="brand-chip">TheCloudSupply.com</div>
+            <a class="brand-chip-link" href="https://autographfoliages.com/" target="_blank" rel="noopener noreferrer">AutographFoliages.com</a>
+            <a class="brand-chip-link" href="https://beastbranding.com/" target="_blank" rel="noopener noreferrer">BeastBranding.com</a>
+            <a class="brand-chip-link" href="https://bikebling.com/" target="_blank" rel="noopener noreferrer">BikeBling.com</a>
+            <a class="brand-chip-link" href="https://cannatron.com/" target="_blank" rel="noopener noreferrer">Cannatron.com</a>
+            <a class="brand-chip-link" href="https://cardboardcore.com/" target="_blank" rel="noopener noreferrer">CardboardCore.com</a>
+            <a class="brand-chip-link" href="https://chocolata.la/" target="_blank" rel="noopener noreferrer">Chocolata.la</a>
+            <a class="brand-chip-link" href="https://dazedwholesale.com/" target="_blank" rel="noopener noreferrer">DazedWholesale.com</a>
+            <a class="brand-chip-link" href="https://designintools.intel.com/" target="_blank" rel="noopener noreferrer">DesignInTools.Intel.com</a>
+            <a class="brand-chip-link" href="https://harmancorp.com/" target="_blank" rel="noopener noreferrer">HarmanCorp.com</a>
+            <a class="brand-chip-link" href="https://hello-vero.com/" target="_blank" rel="noopener noreferrer">Hello-Vero.com</a>
+            <a class="brand-chip-link" href="https://loudlock.com/" target="_blank" rel="noopener noreferrer">LoudLock.com</a>
+            <a class="brand-chip-link" href="https://www.macmeanoffer.com/" target="_blank" rel="noopener noreferrer">MacMeanOffer.com</a>
+            <a class="brand-chip-link" href="https://www.macofalltrades.com/" target="_blank" rel="noopener noreferrer">MacOfAllTrades.com</a>
+            <a class="brand-chip-link" href="https://mjwholesale.com/" target="_blank" rel="noopener noreferrer">MJWholesale.com</a>
+            <a class="brand-chip-link" href="https://moosemademedia.com/" target="_blank" rel="noopener noreferrer">MooseMadeMedia.com</a>
+            <a class="brand-chip-link" href="https://www.oozelife.com/" target="_blank" rel="noopener noreferrer">OozeLife.com</a>
+            <a class="brand-chip-link" href="https://www.pilotcareerhub.com/" target="_blank" rel="noopener noreferrer">PilotCareerHub.com</a>
+            <a class="brand-chip-link" href="https://poptopz.com/" target="_blank" rel="noopener noreferrer">PopTopz.com</a>
+            <a class="brand-chip-link" href="https://www.solidsignal.com/" target="_blank" rel="noopener noreferrer">SolidSignal.com</a>
+            <a class="brand-chip-link" href="https://thecloudsupply.com/" target="_blank" rel="noopener noreferrer">TheCloudSupply.com</a>
           </div>
         </div>
       </div>
