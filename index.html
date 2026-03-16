@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moose Made Media | Custom Ecommerce Development</title>
-  <meta name="description" content="Moose Made Media is a development-first team building custom ecommerce experiences, front ends, integrations, and growth systems for serious brands." />
+  <title>Moose Made Media | Custom eCommerce Development</title>
+  <meta name="description" content="Moose Made Media is a development-first team building custom eCommerce experiences, front ends, integrations, and growth systems for serious brands." />
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -181,6 +181,23 @@
       user-select: none;
       pointer-events: none;
       margin: 0 0 -8px -6px;
+    }
+
+    .years-word {
+      font-family: "Inter", Arial, sans-serif;
+      font-size: clamp(58px, 11vw, 150px);
+      line-height: 0.84;
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      color: rgba(11, 11, 12, 0.08);
+      white-space: nowrap;
+      width: 100%;
+      overflow: visible;
+      user-select: none;
+      pointer-events: none;
+      text-align: right;
+      margin-top: 8px;
     }
 
     .intro-band {
@@ -424,9 +441,48 @@
       .hero-word {
         font-size: 72px;
         margin-left: -2px;
-        white-space: normal;
-        word-break: break-word;
+        white-space: nowrap;
+        word-break: normal;
         line-height: 0.9;
+      }
+
+      .hero-word::before {
+        content: "DEV";
+      }
+
+      .hero-word {
+        color: transparent;
+        position: relative;
+      }
+
+      .hero-word::before {
+        color: rgba(11, 11, 12, 0.08);
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .years-word {
+        font-size: 54px;
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .years-word::before {
+        content: "25+ Yrs";
+      }
+
+      .years-word {
+        color: transparent;
+        position: relative;
+        margin: 0 0 12px;
+      }
+
+      .years-word::before {
+        color: rgba(11, 11, 12, 0.08);
+        position: absolute;
+        left: 0;
+        top: 0;
       }
 
       .hero-actions,
@@ -480,7 +536,7 @@
           </div>
 
           <div class="hero-side">
-            <p>Serious ecommerce for serious brands. Built to grow your company through custom development, sharp execution, and digital systems that actually move the business forward.</p>
+            <p>Serious eCommerce for serious brands. Built to grow your company through custom development, sharp execution, and digital systems that actually move the business forward.</p>
           </div>
         </div>
 
@@ -503,17 +559,17 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Built around capability.</h2>
-          <p>Moose Made Media is a development-first team of front-end developers, custom developers, marketers, and SEO/SEM specialists building sharper ecommerce systems for companies ready to grow.</p>
+          <p>Moose Made Media is a development-first team of front-end developers, custom developers, marketers, and SEO/SEM specialists building sharper eCommerce systems for companies ready to grow.</p>
         </div>
 
         <div class="capabilities">
           <div class="capability">
             <h3>Custom development</h3>
-            <p>Front-end builds, advanced functionality, integrations, custom sections, tailored flows, and ecommerce experiences built around the business instead of forcing the business into a template.</p>
+            <p>Front-end builds, advanced functionality, integrations, custom sections, tailored flows, and eCommerce experiences built around the business instead of forcing the business into a template.</p>
           </div>
 
           <div class="capability">
-            <h3>Ecommerce growth</h3>
+            <h3>eCommerce growth</h3>
             <p>Conversion strategy, structure, content hierarchy, SEO/SEM support, merchandising direction, and meaningful improvements that support revenue and scale.</p>
           </div>
 
@@ -562,7 +618,7 @@
             <div class="brand-chip">MacMeanOffer.com</div>
             <div class="brand-chip">MacOfAllTrades.com</div>
             <div class="brand-chip">MJWholesale.com</div>
-            <div class="brand-chip">BowzCannabis.com</div>
+            <div class="brand-chip">MooseMadeMedia.com</div>
             <div class="brand-chip">OozeLife.com</div>
             <div class="brand-chip">PilotCareerHub.com</div>
             <div class="brand-chip">PopTopz.com</div>
@@ -581,11 +637,11 @@
           </div>
           <p>Professional recommendations consistently point to Moose and his team as strategically sharp, commercially minded, and able to turn complex digital challenges into clear direction clients can actually use.</p>
           <p>Recommendations repeatedly reflect strong leadership, steady communication, and the ability of Moose and his team to guide brands with practical judgment and real-world execution.</p>
-          <p>The common thread is commercial impact: stronger outcomes, sharper strategy, and meaningful growth across ecommerce, branding, search, and digital marketing.</p>
+          <p>The common thread is commercial impact: stronger outcomes, sharper strategy, and meaningful growth across eCommerce, branding, search, and digital marketing.</p>
         </div>
 
         <aside class="quote">
-          <p>“If you’re looking for a team that can execute across a variety of ecommerce challenges, Moose and his team are the right people to call.”</p>
+          <p>“If you’re looking for a team that can execute across a variety of eCommerce challenges, Moose and his team are the right people to call.”</p>
           <small>Adapted from professional recommendations</small>
         </aside>
       </div>
@@ -595,12 +651,15 @@
       <div class="wrap cta-grid">
         <div>
           <h2>Growing your company starts with building it right.</h2>
-          <p>From custom ecommerce development to sharper growth systems, Moose Made Media helps brands build what generic shops can’t.</p>
+          <p>From custom eCommerce development to sharper growth systems, Moose Made Media helps brands build what generic shops can’t.</p>
         </div>
 
-        <div class="cta-actions">
+        <div>
+          <div class="years-word">25 Years in eCommerce</div>
+          <div class="cta-actions">
           <a class="btn btn-primary" href="mailto:moose@moosemademedia.com?subject=Moose%20Made%20Media%20Consult">Email Moose</a>
           <a class="btn btn-secondary" href="tel:5864054041">Call 586-405-4041</a>
+        </div>
         </div>
       </div>
     </section>
@@ -608,7 +667,7 @@
 
   <footer class="wrap">
     <div>© 2026 Moose Made Media</div>
-    <div>Custom Development • Ecommerce • Growth</div>
+    <div>Custom Development • eCommerce • Growth</div>
   </footer>
 </body>
 </html>
